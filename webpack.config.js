@@ -5,7 +5,6 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -25,13 +24,11 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+        use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.s?css$/,
+        test: /\.scss$/,
+        exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
@@ -66,9 +63,6 @@ const config = {
       template: require('html-webpack-template'),
       inject: false,
       appMountId: 'app',
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash].css'
     }),
     new webpack.HashedModuleIdsPlugin()
   ],

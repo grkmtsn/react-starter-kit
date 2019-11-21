@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import Select from 'react-select';
 import AsyncSelect from 'react-select/async';
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
+require("react-datepicker/dist/react-datepicker.css");
 
 const FormControlInput = styled.input(props => `
   display: block;
