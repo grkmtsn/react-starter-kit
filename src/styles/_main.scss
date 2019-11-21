@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+::-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+  background: #fff;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: #888;
+  display: block;
+}
+
+.upload-field .filepond--action-process-item {
+  visibility: hidden !important;
+}
+
+.react-datepicker-wrapper {
+  display: block !important;
+}
